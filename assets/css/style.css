@@ -1,0 +1,14 @@
+.clock {
+	position: relative;
+	text-align: center;
+}
+
+#timer {
+  position: absolute;
+  top: 135px;
+  right: 105px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 150px;
+  color: red;
+  text-align: center;
+}
