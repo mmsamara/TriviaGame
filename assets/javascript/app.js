@@ -2,6 +2,7 @@ var totalTime = 30;
 var intervalId;
 var rightAnswers = 0;
 var wrongAnswers = 0;
+var unanswered = 0;
 
 var questionOne = $( "#question-one" ).val();
 $(document).ready(function() {
@@ -43,30 +44,40 @@ $(document).ready(function() {
 			rightAnswers++;
 			alert("Question 1: Right!")
 		}
-		else {
+		else if (answer1 === 'b' || answer1 === 'c' || answer1 === 'd') {
 			wrongAnswers++;
 			alert("Question 1: wrong :/");
+		}
+		else {
+			unanswered++;
 		}
 
 		if (answer2 === 'c') {
 			rightAnswers++;
 			alert("Question 2: Right!")
 		}
-		else {
+		else if (answer2 === 'a' || answer2 === 'b' || answer2 === 'd') {
 			wrongAnswers++;
 			alert("Question 2: wrong :/");
+		}
+		else {
+			unanswered++;
 		}
 
 		if (answer3 === 'b') {
 			rightAnswers++;
 			alert("Question 3: Right!")
 		}
-		else {
+		else if (answer3 === 'a' || answer3 === 'c' || answer3 === 'd') {
 			wrongAnswers++;
 			alert("Question 3: wrong :/");
+		}
+		else {
+			unanswered++;
 		}
 
 		alert("Right Answers: " + rightAnswers);
 		alert("Wrong Answers: " + wrongAnswers);
+		alert("Unanswered: " + unanswered);
 	}
 })

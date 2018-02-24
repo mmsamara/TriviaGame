@@ -22,3 +22,12 @@
 	background-color: red;
 	color: white;
 }
+
+.panel-default>.panel-heading {
+	background-color: red;
+	color: white;
+}
+
+body {
+	background-image: url("http://davefromcarterfinley.com/wp-content/uploads/2015/08/2015PNCArena_1920x1080.jpg");
+}
