@@ -2,7 +2,6 @@ var totalTime = 30;
 var intervalId;
 var rightAnswers = 0;
 var wrongAnswers = 0;
-var questions = 3;
 
 var questionOne = $( "#question-one" ).val();
 $(document).ready(function() {
@@ -22,9 +21,9 @@ $(document).ready(function() {
 	function decrement() {
 		totalTime--;
 		$('#timer').html('<h2>' + totalTime + '</h2>');
-		console.log(totalTime);
 
 		if (totalTime === 0) {
+			alert("Time's Up!");
 			stop();
 			done();
 		}
@@ -46,7 +45,7 @@ $(document).ready(function() {
 		}
 		else {
 			wrongAnswers++;
-			alert("wrong :/");
+			alert("Question 1: wrong :/");
 		}
 
 		if (answer2 === 'c') {
@@ -55,7 +54,7 @@ $(document).ready(function() {
 		}
 		else {
 			wrongAnswers++;
-			alert("wrong :/");
+			alert("Question 2: wrong :/");
 		}
 
 		if (answer3 === 'b') {
@@ -64,7 +63,10 @@ $(document).ready(function() {
 		}
 		else {
 			wrongAnswers++;
-			alert("wrong :/");
+			alert("Question 3: wrong :/");
 		}
+
+		alert("Right Answers: " + rightAnswers);
+		alert("Wrong Answers: " + wrongAnswers);
 	}
 })
