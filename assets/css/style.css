@@ -12,3 +12,13 @@
   color: red;
   text-align: center;
 }
+
+.jumbotron {
+	background-color: red;
+	color: white;
+}
+
+.btn {
+	background-color: red;
+	color: white;
+}

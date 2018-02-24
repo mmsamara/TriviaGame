@@ -1,17 +1,20 @@
-var totalTime = 60;
+var totalTime = 30;
 var intervalId;
 var rightAnswers = 0;
 var wrongAnswers = 0;
-var unanswered = 0;
-var answerArray = [];
+var questions = 3;
 
 var questionOne = $( "#question-one" ).val();
 $(document).ready(function() {
+
+	$('#questions-div').hide();
 
 	$('#start').on('click', start);
 	$('#submit').on('click', done);
 
 	function start() {
+		$("#start").hide();
+		$('#questions-div').show();
 		clearInterval(intervalId);
 		intervalId = setInterval(decrement, 1000);
 	}
@@ -23,7 +26,6 @@ $(document).ready(function() {
 
 		if (totalTime === 0) {
 			stop();
-
 			done();
 		}
 	}
@@ -33,24 +35,36 @@ $(document).ready(function() {
 	}
 
 	function done() {
-		var answer = $("input[type=radio][name=optradio]:checked").val();
-		var answer2 = $("input[type=radio][name=optradio2]:checked").val();
-		var answer3 = $("input[type=radio][name=optradio3]:checked").val();
 
+		var answer1 = $("input[type=radio][name=q1]:checked").val();
+		var answer2 = $("input[type=radio][name=q2]:checked").val();
+		var answer3 = $("input[type=radio][name=q3]:checked").val();
 
-		if (answer === 'right' || answer2 === 'right' || answer3 === 'right') {
+		if (answer1 === 'a') {
 			rightAnswers++;
-		}
-		else if (answer === 'wrong' || answer === 'wrong' || answer === 'wrong') {
-			wrongAnswers++;
+			alert("Question 1: Right!")
 		}
 		else {
-			unanswered++;
+			wrongAnswers++;
+			alert("wrong :/");
 		}
-		alert("Right answers: " + rightAnswers);
-		alert("Wrong answers: " + wrongAnswers);
-		alert("unanswered: " + unanswered);
-	}
 
-	console.log("<!--testing-->")
+		if (answer2 === 'c') {
+			rightAnswers++;
+			alert("Question 2: Right!")
+		}
+		else {
+			wrongAnswers++;
+			alert("wrong :/");
+		}
+
+		if (answer3 === 'b') {
+			rightAnswers++;
+			alert("Question 3: Right!")
+		}
+		else {
+			wrongAnswers++;
+			alert("wrong :/");
+		}
+	}
 })
